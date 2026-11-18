@@ -6,10 +6,12 @@ function App() {
 
   const [appRunning, setAppRunning] = useState(false);
 
-  return (<>
-    <PokemonApplication/>
-    <button>Start Pokémon App</button>
-  </>);
+  return (
+  <main>
+    <h1>Pokémon Display App</h1>
+    {appRunning && <PokemonApplication/>}
+    <button onClick={() => {setAppRunning(!appRunning)}}>{appRunning ? Start : Stop} Pokémon App</button>
+  </main>);
 }
 
 export default App;
