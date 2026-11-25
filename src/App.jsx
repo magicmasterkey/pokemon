@@ -10,7 +10,7 @@ function App() {
   <main>
     <h1>Pokémon Display App</h1>
     {appRunning && <PokemonApplication/>}
-    <button onClick={() => {setAppRunning(!appRunning)}}>{appRunning ? Start : Stop} Pokémon App</button>
+    <button onClick={() => {setAppRunning(!appRunning)}}>{appRunning ? "Stop" : "Start"} Pokémon App</button>
   </main>);
 }
 
