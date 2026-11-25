@@ -14,16 +14,17 @@ function PokemonApplication() {
     getPkmn();
   }, []);
 
-  console.log(allPkmn);
   return (
     <div>
-      {/*activePkmn && <Pokemon Pkmn={activePkmn} />*/}
+      {activePkmn && <Pokemon pkmnName={activePkmn} />}
       <p>Välj en Pokémon att visa</p>
       <select onChange={(e) => setActivePkmn(e.target.value)}>
         <option value="">Ditt val</option>
-        {allPkmn.map((pkmn) => {
-          console.log(pkmn.name);
-        })}
+        {allPkmn.map((pkmn, i) => (
+          <option value={pkmn.name} key={i}>
+            {pkmn.name}
+          </option>
+        ))}
       </select>
     </div>
   );
