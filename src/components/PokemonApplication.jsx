@@ -39,16 +39,7 @@ function PokemonApplication() {
 
   return (
     <div>
-      {pkmnData && (
-        <Pokemon
-          pkmnName={pkmnData.name}
-          imgUrl={pkmnData.sprites.other.home.front_default}
-          typing={typings}
-          height={pkmnData.height}
-          weight={pkmnData.weight}
-        />
-      )}
-      <p>Välj en Pokémon att visa</p>
+      <p>Choose a Pokémon</p>
       <select
         value={activePkmn}
         onChange={(e) => setActivePkmn(e.target.value)}
@@ -60,7 +51,16 @@ function PokemonApplication() {
           </option>
         ))}
       </select>
-      <button onClick={getActivePkmn}>Visa din pokemon</button>
+      <button onClick={getActivePkmn}>Show chosen Pokémon</button>
+      {pkmnData && (
+        <Pokemon
+          pkmnName={pkmnData.name}
+          imgUrl={pkmnData.sprites.other.home.front_default}
+          typing={typings}
+          height={pkmnData.height}
+          weight={pkmnData.weight}
+        />
+      )}
     </div>
   );
 }
