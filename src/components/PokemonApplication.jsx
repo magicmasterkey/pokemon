@@ -16,14 +16,17 @@ function PokemonApplication() {
     getPkmn();
   }, []);
 
-  const getActivePkmn = async () => {
-    if (activePkmn) {
-      const res = await fetch(activePkmn);
-      const data = await res.json();
+  useEffect(() => {
+    const getActivePkmn = async () => {
+      if (activePkmn) {
+        const res = await fetch(activePkmn);
+        const data = await res.json();
 
-      setPkmnData(await data);
-    }
-  };
+        setPkmnData(await data);
+      }
+    };
+    getActivePkmn();
+  }, [activePkmn]);
 
   useEffect(() => {
     if (pkmnData) {
@@ -51,7 +54,6 @@ function PokemonApplication() {
           </option>
         ))}
       </select>
-      <button onClick={getActivePkmn}>Show chosen Pokémon</button>
       {pkmnData && (
         <Pokemon
           pkmnName={pkmnData.name}
