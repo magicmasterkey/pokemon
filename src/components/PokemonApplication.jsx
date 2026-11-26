@@ -44,10 +44,10 @@ function PokemonApplication() {
         value={activePkmn}
         onChange={(e) => setActivePkmn(e.target.value)}
       >
-        <option value="">Ditt val</option>
+        <option value="">Your choice</option>
         {allPkmn.map((pkmn, i) => (
           <option value={pkmn.url} key={i}>
-            {pkmn.name}
+            {`${i + 1}. ${pkmn.name}`}
           </option>
         ))}
       </select>
