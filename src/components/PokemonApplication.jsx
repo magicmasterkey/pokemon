@@ -7,6 +7,10 @@ function PokemonApplication() {
   const [pkmnData, setPkmnData] = useState(null);
   const [typings, setTypings] = useState("");
 
+  const capitalize = (str) => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  };
+
   useEffect(() => {
     const getPkmn = async () => {
       const res = await fetch("https://pokeapi.co/api/v2/pokemon?limit=151");
@@ -50,13 +54,13 @@ function PokemonApplication() {
         <option value="">Your choice</option>
         {allPkmn.map((pkmn, i) => (
           <option value={pkmn.url} key={i}>
-            {`${i + 1}. ${pkmn.name}`}
+            {`${i + 1}. ${capitalize(pkmn.name)}`}
           </option>
         ))}
       </select>
       {pkmnData && (
         <Pokemon
-          pkmnName={pkmnData.name}
+          pkmnName={capitalize(pkmnData.name)}
           imgUrl={pkmnData.sprites.other.home.front_default}
           typing={typings}
           height={pkmnData.height}
