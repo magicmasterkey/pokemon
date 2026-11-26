@@ -1,0 +1,54 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: black;
+  color: aliceblue;
+}
+
+h1 {
+  font-size: 5rem;
+}
+
+button {
+  padding: 1rem;
+  font-size: 2rem;
+  border-radius: 3rem;
+}
+
+p {
+  font-size: 2rem;
+}
+
+select {
+  font-size: 1.5rem;
+}
+
+.pkmnCard {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 2rem;
+  border: solid aliceblue 1px;
+  border-radius: 2rem;
+  width: 50rem;
+  height: 20rem;
+}
+
+.pkmnCard h2 {
+  font-size: 3rem;
+  text-decoration: underline;
+}
+
+.pkmnCard img {
+  max-width: 20rem;
+  max-height: 20rem;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
